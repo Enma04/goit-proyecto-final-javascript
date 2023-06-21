@@ -1,3 +1,4 @@
+// importaciones y declaraciones
 import axios from 'axios';
 const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let page = 1;
@@ -6,6 +7,7 @@ const listApi = document.getElementById('list_api');
 const anotherBtn = document.getElementById('anotherPage');
 const previousBtn = document.getElementById('previousPage');
 
+// funcion q genera los items con sus respectivos valores sacados de la api de TMDB
 let addImages = page => {
   axios
     .get(
@@ -26,12 +28,17 @@ let addImages = page => {
     })
     .catch(err => console.error('error: ' + err));
 };
+// ejecuto la funcion
 addImages(page);
+
+// sumo a la paginacion +1 y ejecuto la funcion
 anotherBtn.addEventListener('click', () => {
   listApi.textContent = '';
   page++;
   addImages(page);
 });
+
+// resto a la paginacion -1 y ejecuto la funcion
 previousBtn.addEventListener('click', () => {
   listApi.textContent = '';
   page--;

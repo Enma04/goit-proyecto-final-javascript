@@ -11,7 +11,7 @@ const previousBtn = document.getElementById('previousPage');
 let addImages = page => {
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=es-ES&page=${page}&sort_by=popularity.desc`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&include_adult=false&include_video=false&language=es-ES&page=${page}&sort_by=popularity.desc`
     )
     .then(res => {
       console.log(res.data.results);
@@ -35,6 +35,7 @@ addImages(page);
 anotherBtn.addEventListener('click', () => {
   listApi.textContent = '';
   page++;
+  btnPage();
   addImages(page);
 });
 
@@ -42,5 +43,14 @@ anotherBtn.addEventListener('click', () => {
 previousBtn.addEventListener('click', () => {
   listApi.textContent = '';
   page--;
+  btnPage();
   addImages(page);
 });
+const btnPage = () => {
+  if (page === 1) {
+    previousBtn.style.display = 'none';
+  } else {
+    previousBtn.style.display = 'unset';
+  }
+};
+btnPage();

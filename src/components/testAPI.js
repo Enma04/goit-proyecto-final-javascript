@@ -55,3 +55,21 @@ const btnPage = () => {
   }
 };
 btnPage();
+
+
+//------------------------------------------------------------------------
+// --------------- SECTION FOR MY LIST
+const btnMylist = document.querySelector(".mylistBTN");
+let fav = 0;
+
+export let nameOfMovie = listApi.addEventListener("click", event => {
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  }
+  
+  fav += 1;
+  let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+  console.log("Hice click!", name);
+  localStorage.setItem(`${fav}`, name);
+});
+

@@ -1,0 +1,37 @@
+.wrapper > ul {
+  display: flex;
+  list-style: none;
+  padding: 8px;
+  border-radius: 50px;
+  width: auto;
+  background-color: rgb(6, 134, 238);
+  & > li {
+    line-height: 55px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #000;
+    margin: 10px;
+    border-radius: 50px;
+    padding: 10px;
+    color: #fff;
+  }
+  & > .numb {
+    height: 75px;
+    width: 60px;
+  }
+  & > .active {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 20px;
+  }
+  & > .btn {
+    line-height: 60px;
+    font-size: 22px;
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #fff;
+    }
+  }
+}

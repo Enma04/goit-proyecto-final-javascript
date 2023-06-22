@@ -72,4 +72,8 @@ If a blank page opens, make sure there are no errors in the `Console` tab relate
 2. All repository files are copied to the server, where the project is initialized and built before deployment.
 3. If all steps are successful, the built production version of the project files is sent to the `gh-pages` branch. Otherwise, the script execution log will indicate what the problem is.
 
+<<<<<<< HEAD
 Proyecto inicial
+=======
+Hola
+>>>>>>> 892d37461cdda97d887f8205c1d9cec7ee45e054

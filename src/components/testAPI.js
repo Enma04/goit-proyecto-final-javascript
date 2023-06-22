@@ -66,8 +66,9 @@ export let nameOfMovie = listApi.addEventListener("click", event => {
   if (event.target.nodeName !== "BUTTON") {
     return;
   }
-  
+
   fav += 1;
+  console.log(event);
   let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
   console.log("Hice click!", name);
   localStorage.setItem(`${fav}`, name);

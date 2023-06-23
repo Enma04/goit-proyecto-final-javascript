@@ -1,8 +1,11 @@
-const listaFavUl = document.querySelector(".listaFav");
-let myFavList;
+const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+const listaFav = document.querySelector(".listaFav");
 
-myFavList.forEach(element => {
-  listaFavUl.insertAdjacentHTML(
+for(let i=1; i<=localStorage.length; i++) {
+  //console.log("Local storage", localStorage.getItem(`${i}`));
+  let element = JSON.parse(localStorage.getItem(`${i}`));
+  console.log("element = ", element);
+  listaFav.insertAdjacentHTML(
     'beforeend',
     `<li>
   <h3>${element.original_title}</h3>
@@ -11,5 +14,5 @@ myFavList.forEach(element => {
   <button class="mylistBTN">Add to My List</button>
 </li>`
   );
-});
+}
 

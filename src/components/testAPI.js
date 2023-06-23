@@ -61,7 +61,7 @@ btnPage();
 
 //------------------------------------------------------------------------
 // --------------- SECTION FOR MY LIST
-export let myFavList = [];
+let count = 0;
 
 listApi.addEventListener("click", event => {
   if (event.target.nodeName !== "BUTTON") {
@@ -77,13 +77,15 @@ listApi.addEventListener("click", event => {
           return
         }
       }
+      count++;
+      localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
+      //localStorage.clear();
+      //count = 0;
       myFavList.push(vec[i]);
     }
   }
 
-  //localStorage.setItem(`${fav}`, name);
   console.log("Hice click!", name);
-  console.log("Es verdad?", vec[0].original_title === name);
-  console.log("My fav List: ", myFavList);
 });
+
 

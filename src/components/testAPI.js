@@ -63,6 +63,10 @@ btnPage();
 // --------------- SECTION FOR MY LIST
 let count = 0;
 
+if( localStorage.length !== 0 ) {
+  count = localStorage.length;
+}
+
 listApi.addEventListener("click", event => {
   if (event.target.nodeName !== "BUTTON") {
     return;
@@ -72,8 +76,8 @@ listApi.addEventListener("click", event => {
 
   for(let i=0; i<vec.length; i++) {
     if( vec[i].original_title === name ) {
-      for(let j=0; j<myFavList.length; j++) {
-        if( myFavList[j].original_title === name ) {
+      for(let j=1; j<=localStorage.length; j++) {
+        if( JSON.parse(localStorage.getItem(`${j}`)).original_title === name ) {
           return
         }
       }
@@ -81,7 +85,6 @@ listApi.addEventListener("click", event => {
       localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
       //localStorage.clear();
       //count = 0;
-      myFavList.push(vec[i]);
     }
   }
 

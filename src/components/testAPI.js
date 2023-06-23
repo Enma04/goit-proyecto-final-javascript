@@ -1,9 +1,9 @@
 // importaciones y declaraciones
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css';
-const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
+export const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let i = 1;
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+export const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 const listApi = document.getElementById('list_api');
 const listPages = document.getElementById('listPages');
 
@@ -18,10 +18,12 @@ let addImages = page => {
         vec = res.data.results;
         listApi.insertAdjacentHTML(
           'beforeend',
-          `<li>
-        <h3>${element.original_title}</h3>
-        <img src="${imageBaseURL}${element.poster_path}" alt="${element.title}" />
-        <p>${element.overview}</p>
+          `<li id="idItemApi">
+        <h3 id="idTitleApi">${element.original_title}</h3>
+        <img src="${imageBaseURL}${element.poster_path}" alt="${
+            element.title
+          }" />
+        <p>${element.release_date.split('-')[0]}</p>
         <button class="mylistBTN">Add to My List</button>
       </li>`
         );

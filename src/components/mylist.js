@@ -1,4 +1,4 @@
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+import { imageBaseURL } from './testAPI';
 const listaFav = document.querySelector('.listaFav');
 
 for (let i = 1; i <= localStorage.getItem('conteo'); i++) {

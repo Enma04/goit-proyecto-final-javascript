@@ -1,6 +1,5 @@
 .wrapper > ul {
   display: flex;
-  list-style: none;
   padding: 8px;
   border-radius: 50px;
   width: 100%;
@@ -39,4 +38,7 @@
       background-color: #d30707;
     }
   }
+}
+.filter {
+  display: none;
 }

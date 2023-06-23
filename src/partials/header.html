@@ -15,12 +15,16 @@
             </ul>
         </nav>
     </div>
-    <form id="search-form" action class="search">
-        <input class="input_search" placeholder="Search for movie ...">
+    <div id="search-form" class="search">
+        <input class="input_search" id="idInputSearch" placeholder="Search for movie ...">
         <button class="search_button" type="submit">
             <svg class="icon-search"> <use href='./images/icons.svg#icon-search'></use></svg>
         </button>
-    </form>
+        <div id="results_search">
+        <ul id="idSearchList">
+        </ul>
+    </div>
+    </div>
     <div class="toolbar container">
         <div class="theme-swich">
         <svg class="theme-swich_icon">
@@ -28,9 +32,11 @@
         </svg>
         <div class="theme-swich_control">
             <input class="theme-swich_light" type="checkbox" name="theme" id="switch-toggle">
-            <label aria-hidden="true" class="theme-swich-toggle" for=""></label>
+            <button class="theme-swich-toggle"></button>
             <div aria-hidden="true" class="theme-swich_maker"></div>
         </div>
     </div>
     </header>
+    <script type="module" src="./components/styleDark.js"></script>
+    
     

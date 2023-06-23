@@ -2,6 +2,7 @@
 import axios from 'axios';
 const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let page = 1;
+let vec;
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 const listApi = document.getElementById('list_api');
 const anotherBtn = document.getElementById('anotherPage');
@@ -14,7 +15,8 @@ let addImages = page => {
       `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&include_adult=false&include_video=false&language=es-ES&page=${page}&sort_by=popularity.desc`
     )
     .then(res => {
-      console.log(res.data.results);
+      vec = res.data.results;
+      //console.log(res.data.results);
       res.data.results.forEach(element => {
         listApi.insertAdjacentHTML(
           'beforeend',
@@ -59,18 +61,29 @@ btnPage();
 
 //------------------------------------------------------------------------
 // --------------- SECTION FOR MY LIST
-const btnMylist = document.querySelector(".mylistBTN");
-let fav = 0;
+export let myFavList = [];
 
-export let nameOfMovie = listApi.addEventListener("click", event => {
+listApi.addEventListener("click", event => {
   if (event.target.nodeName !== "BUTTON") {
     return;
   }
 
-  fav += 1;
-  console.log(event);
   let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+
+  for(let i=0; i<vec.length; i++) {
+    if( vec[i].original_title === name ) {
+      for(let j=0; j<myFavList.length; j++) {
+        if( myFavList[j].original_title === name ) {
+          return
+        }
+      }
+      myFavList.push(vec[i]);
+    }
+  }
+
+  //localStorage.setItem(`${fav}`, name);
   console.log("Hice click!", name);
-  localStorage.setItem(`${fav}`, name);
+  console.log("Es verdad?", vec[0].original_title === name);
+  console.log("My fav List: ", myFavList);
 });
 

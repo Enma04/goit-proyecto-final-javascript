@@ -1,8 +1,9 @@
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 const listaFav = document.querySelector(".listaFav");
 
-for(let i=1; i<=localStorage.length; i++) {
+for(let i=1; i<=localStorage.getItem("conteo"); i++) {
   //console.log("Local storage", localStorage.getItem(`${i}`));
+  if( localStorage.getItem(`${i}`) === null ) break;
   let element = JSON.parse(localStorage.getItem(`${i}`));
   console.log("element = ", element);
   listaFav.insertAdjacentHTML(

@@ -64,7 +64,7 @@ btnPage();
 let count = 0;
 
 if( localStorage.length !== 0 ) {
-  count = localStorage.length;
+  count = localStorage.getItem("conteo");
 }
 
 listApi.addEventListener("click", event => {
@@ -76,13 +76,16 @@ listApi.addEventListener("click", event => {
 
   for(let i=0; i<vec.length; i++) {
     if( vec[i].original_title === name ) {
-      for(let j=1; j<=localStorage.length; j++) {
-        if( JSON.parse(localStorage.getItem(`${j}`)).original_title === name ) {
-          return
+      //if(localStorage.length <= 0) {
+        for(let j=1; j<=localStorage.getItem("conteo"); j++) {
+          if( JSON.parse(localStorage.getItem(`${j}`)).original_title === name ) {
+            return
+          }
         }
-      }
+      //}
       count++;
       localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
+      localStorage.setItem("conteo", `${count}`);
       //localStorage.clear();
       //count = 0;
     }

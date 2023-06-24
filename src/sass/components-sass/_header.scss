@@ -4,7 +4,6 @@ header {
   width: 100%;
   padding: 45px 20px;
   height: 390px;
-
   background-image: url(../images/banner6.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -148,6 +147,7 @@ ul {
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
+  border: none;
 }
 .theme-swich_light {
   position: absolute;

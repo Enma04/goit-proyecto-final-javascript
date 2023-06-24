@@ -2,6 +2,7 @@
 import axios from 'axios';
 const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let page = 1;
+let vec;
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 const listApi = document.getElementById('list_api');
 const anotherBtn = document.getElementById('anotherPage');
@@ -14,7 +15,8 @@ let addImages = page => {
       `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&include_adult=false&include_video=false&language=es-ES&page=${page}&sort_by=popularity.desc`
     )
     .then(res => {
-      console.log(res.data.results);
+      vec = res.data.results;
+      //console.log(res.data.results);
       res.data.results.forEach(element => {
         listApi.insertAdjacentHTML(
           'beforeend',
@@ -22,6 +24,7 @@ let addImages = page => {
         <h3>${element.original_title}</h3>
         <img src="${imageBaseURL}${element.backdrop_path}" alt="${element.title}" />
         <p>${element.overview}</p>
+        <button class="mylistBTN">Add to My List</button>
       </li>`
         );
       });
@@ -54,3 +57,41 @@ const btnPage = () => {
   }
 };
 btnPage();
+
+
+//------------------------------------------------------------------------
+// --------------- SECTION FOR MY LIST
+let count = 0;
+
+if( localStorage.length !== 0 ) {
+  count = localStorage.getItem("conteo");
+}
+
+listApi.addEventListener("click", event => {
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  }
+
+  let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+
+  for(let i=0; i<vec.length; i++) {
+    if( vec[i].original_title === name ) {
+      //if(localStorage.length <= 0) {
+        for(let j=1; j<=localStorage.getItem("conteo"); j++) {
+          if( JSON.parse(localStorage.getItem(`${j}`)).original_title === name ) {
+            return
+          }
+        }
+      //}
+      count++;
+      localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
+      localStorage.setItem("conteo", `${count}`);
+      //localStorage.clear();
+      //count = 0;
+    }
+  }
+
+  console.log("Hice click!", name);
+});
+
+

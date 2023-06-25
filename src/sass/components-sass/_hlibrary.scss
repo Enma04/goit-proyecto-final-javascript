@@ -16,12 +16,11 @@ header {
   justify-content: center;
   margin-bottom: 25px;
   list-style: none;
-  gap: 40%;
 }
 .logo {
-  align-self: flex-end;
   display: flex;
-  margin-left: 40px;
+  align-self: flex-end;
+  margin-right: 564px;
 }
 
 a {
@@ -51,11 +50,10 @@ ul {
 
 .menu {
   display: flex;
-  gap: 50px;
-  padding: 0;
 }
 
 .menu_items {
+  margin-right: 50px;
   position: relative;
 }
 
@@ -82,22 +80,6 @@ ul {
 }
 ::placeholder {
   color: #fff;
-}
-.search_button {
-  position: relative;
-  bottom: -8px;
-  width: 20px;
-  height: 20px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.icon-search {
-  bottom: 4px;
-  width: 20px;
-  height: 14px;
-  fill: #fff;
 }
 
 .logo_svg {
@@ -177,28 +159,73 @@ ul {
   transition: transform 0.25s var(--timing-function);
 }
 
+/* 
+estilos del header library
+*/
+
+.btn {
+  display: flex;
+  position: relative;
+  margin: 0 auto 22px;
+  justify-content: center;
+}
+.btn_watch {
+  margin-right: 30px;
+  width: 120px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 16px 32px;
+  border: 1.5px solid #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.btn_queue {
+  background-color: transparent;
+  width: 120px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 16px 32px;
+  border: 1.5px solid #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   header {
     background-image: url(/src/images/movil2.jpg);
-    background-size: cover;
   }
   a {
     color: #fff;
-    font-weight: 600;
-    font-size: 11px;
+    font-weight: 400;
+    font-size: 10px;
   }
   .navigation__container {
     display: block;
     justify-content: center;
   }
   .menu {
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    margin-left: 15px;
   }
+
+  .menu_items {
+    margin-right: 20px;
+  }
+
   .logo {
     display: flex;
     margin-right: 0px;
-    justify-content: left;
   }
   .toolbar {
     top: 0px;
@@ -206,5 +233,17 @@ ul {
 
   .theme-swich {
     margin-right: 0px;
+  }
+  .btn_watch {
+    width: 80px;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 15px;
+  }
+
+  .btn_queue {
+    width: 80px;
+    font-size: 12px;
+    padding: 5px 10px;
   }
 }

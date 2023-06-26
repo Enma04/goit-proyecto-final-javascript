@@ -19,6 +19,7 @@ body::-webkit-scrollbar-thumb {
 
 .dark{
   background-color: #606060;
+  color: #e6e0e0;
 }
 
 .list_api{
@@ -26,26 +27,42 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: calc((100% - 1050px)/3);
+  //gap: calc((100% - 1050px)/3); --> para 3 tarjetas
+  //gap: calc((100% - 1650px)/3); --> para 4 tarjetas
+  gap: calc((100% - 1350px)/3);
 }
 
 .card{
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   width: 350px;
   padding: 20px 25px;
-  //border: 0.5px solid rgb(122, 67, 63);
-  border-radius: 8%;
-  text-align: center;
-  -webkit-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
-  box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
-  background-image: linear-gradient(
+  line-height: 1em;
+  border: 0.5px solid rgb(194, 194, 194);
+  border-radius: 10px;
+  cursor: pointer;
+  
+  /* background-image: linear-gradient(
     to left,
     rgb(176, 186, 214),
     rgb(197, 166, 161)
-  );
+  ); */
+}
+
+.card:hover{
+  -webkit-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
+  box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
 }
 
 .card > img{
   width: 300px;
+}
+
+.generes{
+  font-weight: 600;
+  color: #8f1021;
+}
+
+.dark .generes{
+  color: rgb(218, 143, 31);
 }

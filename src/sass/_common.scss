@@ -21,3 +21,22 @@ body::-webkit-scrollbar-thumb {
   background-color: #606060;
 }
 
+.list_api{
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc((100% - 1050px)/3);
+}
+
+.card{
+  margin-bottom: 2%;
+  width: 350px;
+  padding: 20px 25px;
+  border: solid red 1px;
+  text-align: center;
+}
+
+.card > img{
+  width: 300px;
+}

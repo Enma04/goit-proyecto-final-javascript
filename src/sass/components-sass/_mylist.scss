@@ -1,8 +1,15 @@
+@import '../common';
+
+#titleMylist{
+    margin-top: 50px;
+    text-align: center;
+}
+
 .mylistBTN{
-    width: 15%;
+    width: 25%;
     height: 40px;
     border: solid 0.5px rgb(87, 3, 3);
-    border-radius: 15%;
+    border-radius: 25%;
     background-color: rgb(117, 11, 11);
     color: aliceblue;
     font-weight: 700;
@@ -10,7 +17,7 @@
 
 .mylistBTN:hover{
     border: solid 0.5px rgb(87, 3, 3);
-    border-radius: 15%;
+    border-radius: 25%;
     cursor: pointer;
     background-color: rgb(150, 27, 27);
     color: aliceblue;

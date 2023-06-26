@@ -12,14 +12,13 @@ header {
 .navigation__container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 25px;
   list-style: none;
 }
 .logo {
   display: flex;
   align-self: flex-end;
-  margin-right: 564px;
 }
 
 a {

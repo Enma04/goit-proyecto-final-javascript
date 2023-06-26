@@ -7,7 +7,7 @@ export const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let cont = 1;
 let groupGenres = [];
 export const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
-const listApi = document.getElementById('list_api');
+const listApi = document.querySelector('.list_api');
 const listPages = document.getElementById('listPages');
 
 // funcion q genera los items con sus respectivos valores sacados de la api de TMDB
@@ -29,7 +29,7 @@ let addImages = page => {
         let unionGenres = groupGenres.join(', ');
         listApi.insertAdjacentHTML(
           'beforeend',
-          `<li id="idItemApi">
+          `<li id="idItemApi" class="card">
         <img src="${
           element.poster_path
             ? `${imageBaseURL}${element.poster_path}`

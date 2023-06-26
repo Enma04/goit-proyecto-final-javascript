@@ -8,7 +8,7 @@ for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
   console.log('element = ', element);
   listaFav.insertAdjacentHTML(
     'beforeend',
-    `<li>
+    `<li class="card">
   <h3>${element.original_title}</h3>
   <img src="${imageBaseURL}${element.poster_path}" alt="${element.title}" />
   <p>${element.overview}</p>

@@ -36,8 +36,8 @@ let addImages = page => {
             : 'https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg'
         }" alt="${element.title}" />
         <h3 id="idTitleApi">${element.original_title}</h3>
-        <p>${unionGenres}</p>
-        <p>${element.release_date.split('-')[0]}</p>
+        <p class="generes">${unionGenres}</p>
+        <p class="date">${element.release_date.split('-')[0]}</p>
         <button class="mylistBTN">Add</button>
       </li>`
         );

@@ -12,7 +12,7 @@ for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
   <h3>${element.original_title}</h3>
   <img src="${imageBaseURL}${element.poster_path}" alt="${element.title}" />
   <p>${element.overview}</p>
-  <button class="mylistBTN">Add to My List</button>
+  <button class="mylistBTN addedBTN">Added</button>
 </li>`
   );
 }

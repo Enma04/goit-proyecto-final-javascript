@@ -38,8 +38,7 @@ let addImages = page => {
         <h3 id="idTitleApi">${element.original_title}</h3>
         <p>${unionGenres}</p>
         <p>${element.release_date.split('-')[0]}</p>
-        <p>${element.vote_average}</p>
-        <button class="mylistBTN">Add to My List</button>
+        <button class="mylistBTN">Add</button>
       </li>`
         );
         groupGenres = [];
@@ -105,6 +104,16 @@ if (localStorage.length !== 0) {
 listApi.addEventListener('click', event => {
   if (event.target.nodeName !== 'BUTTON') {
     return;
+  }
+
+  //console.log(event.target);
+  event.target.classList.toggle("addedBTN");
+
+  if(event.target.classList.contains("addedBTN")) {
+    event.target.textContent = "Added";
+  }
+  else{
+    event.target.textContent = "Add";
   }
 
   let name =

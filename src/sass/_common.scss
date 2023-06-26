@@ -4,3 +4,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  width: 12px; /* Ancho del scroll */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #e6e0e0; /* Color de fondo del track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8f1021; /* Color de la barra deslizante */
+  border-radius: 6px; /* Radio de las esquinas del thumb */
+}
+

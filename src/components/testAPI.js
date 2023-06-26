@@ -24,7 +24,7 @@ let addImages = page => {
             element.title
           }" />
         <p>${element.release_date.split('-')[0]}</p>
-        <button class="mylistBTN">Add to My List</button>
+        <button class="mylistBTN">Add</button>
       </li>`
         );
       });
@@ -95,6 +95,16 @@ if (localStorage.length !== 0) {
 listApi.addEventListener('click', event => {
   if (event.target.nodeName !== 'BUTTON') {
     return;
+  }
+
+  //console.log(event.target);
+  event.target.classList.toggle("addedBTN");
+
+  if(event.target.classList.contains("addedBTN")) {
+    event.target.textContent = "Added";
+  }
+  else{
+    event.target.textContent = "Add";
   }
 
   let name =

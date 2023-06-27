@@ -48,12 +48,13 @@ let addImages = page => {
         );
 
         for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
-          if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
-
-            let boton = document.querySelectorAll('.mylistBTN')[index];
-            boton.setAttribute("value", `${i}`);
-            boton.classList.add("addedBTN");
-            console.log("Boton: ", boton);
+          if (localStorage.getItem(`${i}`) !== null) {
+            if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
+              let boton = document.querySelectorAll('.mylistBTN')[index];
+              boton.setAttribute("value", `${i}`);
+              boton.classList.add("addedBTN");
+              console.log("Boton: ", boton);
+            }
           }
         }
 
@@ -136,7 +137,7 @@ listApi.addEventListener('click', event => {
     for (let i = 0; i < vec.length; i++) {
       if (vec[i].original_title === name) {
 
-        for (let j = 1; j <= localStorage.getItem('conteo'); j++) {
+        for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
           if (localStorage.getItem(`${j}`) !== null) {
             if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
               return;
@@ -158,12 +159,10 @@ listApi.addEventListener('click', event => {
   else{
     event.target.textContent = "Add";
 
-    for (let j = 1; j <= localStorage.getItem('conteo'); j++) {
+    for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
       if (localStorage.getItem(`${j}`) !== null) {
         if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
           localStorage.removeItem(`${j}`);
-          count--;
-          localStorage.setItem('conteo', `${count}`);
         }
       }
     }

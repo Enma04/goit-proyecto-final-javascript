@@ -10,18 +10,20 @@ header {
   background-position: center;
   background-size: cover;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 .navigation__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 25px;
   list-style: none;
-  gap: 40%;
 }
 .logo {
   align-self: flex-end;
   display: flex;
-  margin-left: 40px;
+  margin-right: 500px;
 }
 
 a {
@@ -51,12 +53,15 @@ ul {
 
 .menu {
   display: flex;
-  gap: 50px;
-  padding: 0;
 }
 
 .menu_items {
   position: relative;
+  margin-right: 50%;
+}
+.menu_itemsl {
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .search {
@@ -101,8 +106,8 @@ ul {
 }
 
 .logo_svg {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   fill: #fff;
   align-self: center;
   margin-right: 10px;
@@ -118,7 +123,8 @@ ul {
 .theme-swich {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 20%;
+  margin-top: 60%;
 }
 
 .theme-swich_icon {

@@ -19,6 +19,7 @@ let addImages = page => {
     .then(res => {
       res.data.results.forEach(element => {
         vec = res.data.results;
+
         element.genre_ids.forEach(genre => {
           genres.forEach(dataGenre => {
             if (genre === dataGenre.id) {
@@ -26,7 +27,9 @@ let addImages = page => {
             }
           });
         });
+
         let unionGenres = groupGenres.join(', ');
+
         listApi.insertAdjacentHTML(
           'beforeend',
           `<li id="idItemApi" class="card">
@@ -41,8 +44,19 @@ let addImages = page => {
         <button class="mylistBTN">Add</button>
       </li>`
         );
+
+        for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
+          if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
+            document.querySelector('.mylistBTN').classList.add("addedBTN");
+            console.log("Boton: ", document.querySelector('.mylistBTN'));
+          }
+        }
+        //agregados(element.original_title);
+
         groupGenres = [];
+
       });
+
       modal('#idItemApi');
       let allPages = res.data.total_pages;
       function elem(perPage, page) {
@@ -106,7 +120,7 @@ listApi.addEventListener('click', event => {
     return;
   }
 
-  //console.log(event.target);
+  //console.log("evento: ", event.target);
   event.target.classList.toggle("addedBTN");
 
   if(event.target.classList.contains("addedBTN")) {
@@ -116,8 +130,10 @@ listApi.addEventListener('click', event => {
     event.target.textContent = "Add";
   }
 
+  console.log("evento: ", event);
+
   let name =
-    event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+    event.target.parentElement.childNodes[0].nextElementSibling.alt;
 
   for (let i = 0; i < vec.length; i++) {
     if (vec[i].original_title === name) {
@@ -138,3 +154,13 @@ listApi.addEventListener('click', event => {
 
   console.log('Hice click!', name);
 });
+
+function agregados(nombre) { 
+  for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
+    if (JSON.parse(localStorage.getItem(`${i}`)).original_title === nombre) {
+      document.querySelector('.mylistBTN').classList.add("hola");
+      console.log("Boton: ", document.querySelector('.mylistBTN'));
+    }
+  }
+}
+

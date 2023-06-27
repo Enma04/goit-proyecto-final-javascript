@@ -106,7 +106,7 @@ listApi.addEventListener('click', event => {
     return;
   }
 
-  //console.log(event.target);
+  //console.log("evento: ", event.target);
   event.target.classList.toggle("addedBTN");
 
   if(event.target.classList.contains("addedBTN")) {
@@ -116,8 +116,10 @@ listApi.addEventListener('click', event => {
     event.target.textContent = "Add";
   }
 
+  console.log("evento: ", event);
+
   let name =
-    event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+    event.target.parentElement.childNodes[0].nextElementSibling.alt;
 
   for (let i = 0; i < vec.length; i++) {
     if (vec[i].original_title === name) {

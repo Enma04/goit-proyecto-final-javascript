@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="idHeader">
     <div class="navigation__container">
         <a href="" class="logo">
             <svg class="logo_svg"><use href='./images/icons.svg#icon-film'></use></svg>
@@ -17,7 +17,7 @@
     </div>
     <div id="search-form" class="search">
         <input autocomplete="off" class="input_search" id="idInputSearch" placeholder="Search for movie ...">
-        <button class="search_button" type="submit">
+        <button class="search_button" type="submit" id="idSearchButton">
             <svg class="icon-search"> <use href='./images/icons.svg#icon-search'></use></svg>
         </button>
         <div id="results_search">
@@ -28,7 +28,8 @@
     <div class="toolbar container">
         <div class="theme-swich">
         <svg class="theme-swich_icon">
-            <use href='./images/icons.svg#icon-brightness-contrast'></use>
+            <use id="swich__sun" href='./images/icons.svg#icon-brightness-contrast'></use>
+            <use id="swich__moon" class="filter" href='./images/icons.svg#icon-moon'></use>
         </svg>
         <div class="theme-swich_control">
             <input class="theme-swich_light" type="checkbox" name="theme" id="switch-toggle">
@@ -36,7 +37,7 @@
             <div aria-hidden="true" class="theme-swich_maker"></div>
         </div>
     </div>
-    </header>
-    <script type="module" src="./components/styleDark.js"></script>
-    
+</header>
+<script type="module" src="./components/styleDark.js"></script>
+
     

@@ -135,13 +135,15 @@ listApi.addEventListener('click', event => {
 
     for (let i = 0; i < vec.length; i++) {
       if (vec[i].original_title === name) {
-        //if(localStorage.length <= 0) {
+
         for (let j = 1; j <= localStorage.getItem('conteo'); j++) {
-          if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
-            return;
+          if (localStorage.getItem(`${j}`) !== null) {
+            if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+              return;
+            }
           }
         }
-        //}
+
         count++;
         localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
         localStorage.setItem('conteo', `${count}`);
@@ -155,6 +157,16 @@ listApi.addEventListener('click', event => {
   //Estoy eliminando el elemento a mylist
   else{
     event.target.textContent = "Add";
+
+    for (let j = 1; j <= localStorage.getItem('conteo'); j++) {
+      if (localStorage.getItem(`${j}`) !== null) {
+        if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+          localStorage.removeItem(`${j}`);
+          count--;
+          localStorage.setItem('conteo', `${count}`);
+        }
+      }
+    }
   }
 
   console.log("evento: ", event);

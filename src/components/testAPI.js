@@ -17,8 +17,10 @@ let addImages = page => {
       `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&include_adult=false&include_video=false&page=${page}&sort_by=popularity.desc`
     )
     .then(res => {
-      res.data.results.forEach(element => {
+      res.data.results.forEach((element, index) => {
         vec = res.data.results;
+
+        console.log("Estoy en el elemento: ", index);
 
         element.genre_ids.forEach(genre => {
           genres.forEach(dataGenre => {
@@ -45,16 +47,18 @@ let addImages = page => {
       </li>`
         );
 
-        for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
-          if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
-            document.querySelector('.mylistBTN').classList.add("addedBTN");
-            console.log("Boton: ", document.querySelector('.mylistBTN'));
+        for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
+          if (localStorage.getItem(`${i}`) !== null) {
+            if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
+              let boton = document.querySelectorAll('.mylistBTN')[index];
+              boton.setAttribute("value", `${i}`);
+              boton.classList.add("addedBTN");
+              console.log("Boton: ", boton);
+            }
           }
         }
-        //agregados(element.original_title);
 
         groupGenres = [];
-
       });
 
       modal('#idItemApi');
@@ -120,47 +124,50 @@ listApi.addEventListener('click', event => {
     return;
   }
 
+  let name =
+    event.target.parentElement.childNodes[0].nextElementSibling.alt;
+
   //console.log("evento: ", event.target);
   event.target.classList.toggle("addedBTN");
 
+  //Estoy añadiendo el elemento a mylist
   if(event.target.classList.contains("addedBTN")) {
     event.target.textContent = "Added";
+
+    for (let i = 0; i < vec.length; i++) {
+      if (vec[i].original_title === name) {
+
+        for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
+          if (localStorage.getItem(`${j}`) !== null) {
+            if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+              return;
+            }
+          }
+        }
+
+        count++;
+        localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
+        localStorage.setItem('conteo', `${count}`);
+        //localStorage.clear();
+        //count = 0;
+      }
+    }
+  
+    console.log('Hice click!', name);
   }
+  //Estoy eliminando el elemento a mylist
   else{
     event.target.textContent = "Add";
+
+    for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
+      if (localStorage.getItem(`${j}`) !== null) {
+        if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+          localStorage.removeItem(`${j}`);
+        }
+      }
+    }
   }
 
   console.log("evento: ", event);
 
-  let name =
-    event.target.parentElement.childNodes[0].nextElementSibling.alt;
-
-  for (let i = 0; i < vec.length; i++) {
-    if (vec[i].original_title === name) {
-      //if(localStorage.length <= 0) {
-      for (let j = 1; j <= localStorage.getItem('conteo'); j++) {
-        if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
-          return;
-        }
-      }
-      //}
-      count++;
-      localStorage.setItem(`${count}`, JSON.stringify(vec[i]));
-      localStorage.setItem('conteo', `${count}`);
-      //localStorage.clear();
-      //count = 0;
-    }
-  }
-
-  console.log('Hice click!', name);
 });
-
-function agregados(nombre) { 
-  for (let i = 1; i <= localStorage.getItem('conteo'); i++) {
-    if (JSON.parse(localStorage.getItem(`${i}`)).original_title === nombre) {
-      document.querySelector('.mylistBTN').classList.add("hola");
-      console.log("Boton: ", document.querySelector('.mylistBTN'));
-    }
-  }
-}
-

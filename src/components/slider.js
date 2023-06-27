@@ -10,8 +10,8 @@ window.addEventListener('DOMContentLoaded', function () {
   function animation() {
     currentTranslate -= 1;
 
-    if (currentTranslate < -300) {
-      currentTranslate += 300;
+    if (currentTranslate < -301) {
+      currentTranslate += 301;
       slider.appendChild(slider.firstElementChild); 
     }
     slider.style.transform = `translateX(${currentTranslate}px)`;

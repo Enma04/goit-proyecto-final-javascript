@@ -1,8 +1,7 @@
 header {
   display: block;
   margin: auto;
-  width: 100%;
-  padding: 45px 20px;
+  padding: 45px 0px;
   height: 450px;
 
   background-image: url(/src/images/bannerTrOk.png);
@@ -16,14 +15,12 @@ header {
 .navigation__container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 25px;
   list-style: none;
 }
 .logo {
-  align-self: flex-end;
   display: flex;
-  margin-right: 500px;
 }
 
 a {
@@ -47,19 +44,43 @@ ul {
   text-transform: none;
 }
 
-.navigation {
-  display: block;
-}
-
 .menu {
   display: flex;
 }
 
 .menu_items {
-  position: relative;
-  margin-right: 50%;
+  margin-right: 50px;
 }
+
+.menu_link {
+  position: relative;
+
+  &:hover, &:focus, &:active {
+      color: #cf5d59;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: calc(100% + 15px);
+    width: 100%;
+    background-color: #cf5d59;
+    height: 4px;
+    border-radius: 2px;
+    opacity: 0;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    opacity: 1;
+  }
+}
+
+
 .menu_itemsl {
+  position: relative;
   white-space: nowrap;
   overflow: visible;
 }

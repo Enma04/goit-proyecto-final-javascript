@@ -1,9 +1,11 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 body::-webkit-scrollbar {
   width: 12px; /* Ancho del scroll */
 }
@@ -17,6 +19,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 6px; /* Radio de las esquinas del thumb */
 }
 
+.container {
+  width: 1200px;
+  margin: 0px auto;
+}
+
 .dark{
   background-color: #606060;
   color: #e6e0e0;
@@ -27,9 +34,9 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  //gap: calc((100% - 1050px)/3); --> para 3 tarjetas
+  gap: 50px; //--> para 3 tarjetas
   //gap: calc((100% - 1650px)/3); --> para 4 tarjetas
-  gap: calc((100% - 1350px)/3);
+  //gap: calc((100% - 1350px)/3);
 }
 
 .card{

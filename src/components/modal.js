@@ -4,17 +4,58 @@ const basicLightbox = require('basiclightbox');
 export function modal(list) {
   if (document.querySelectorAll(`${list}`).length > 0) {
     document.querySelectorAll(`${list}`).forEach(element => {
-      element.addEventListener('click', () => {
+      element.querySelector('img').addEventListener('click', () => {
         var instance = basicLightbox.create(`
-              <div class="modal-content">
-                <img src="${element.querySelector('img').src}" alt="${
-          element.querySelector('h3').textContent
-        }" />
-                <h1>${element.querySelector('h3').textContent}</h1>
-                <p>${element.querySelector('p').textContent}</p>
-                <button class="mylistBTN">Add to My List</button>
+              <div class="modalcard">
+                <img class="modalcard__img" src="${
+                  element.querySelector('img').src
+                }" alt="${element.querySelector('#idTitleApi').textContent}" />
+                <i class="ri-close-fill ri-2x modalcard__close"></i>
+                <div class="modalcard__wrapper">
+                <div class="modalcard__box">
+                <h1 class="modalcard__title">${
+                  element.querySelector('#idTitleApi').textContent
+                }</h1>
+                <div class="modalcard__list-box">
+                  <ul class="modalcard__list-description">
+                <li class="modalcard__item-description"><p class="modalcard__description">Vote / Votes </p></li>
+                <li class="modalcard__item-description"><p class="modalcard__description">Popularity </p></li>
+                <li class="modalcard__item-description"><p class="modalcard__description">Original Title </p></li>
+                <li class="modalcard__item-description"><p class="modalcard__description">Genres </p></li>
+                </ul>
+                <ul class="modalcard__info-list">
+                <li><p class="modalcard__info"><span class="modalcard__span">${
+                  element.querySelector('.vote-api').textContent
+                }</span> / ${
+          element.querySelector('.vote-count-api').textContent
+        }</p></li>
+                <li><p class="modalcard__info">${
+                  element.querySelector('.popularity-api').textContent
+                }</p></li>
+                <li><p class="modalcard__info">${
+                  element.querySelector('#idTitleApi').textContent
+                }</p></li>
+                <li><p class="modalcard__info">${
+                  element.querySelector('.generes-api').textContent
+                }</p></li>
+                </ul>
+                </div>
+                </div>
+                <div class="modalcard__mini-wrapper">
+                  <h3 class="modalcard__about">About</h3>
+                <p class="modalcard__overview">${
+                  element.querySelector('.overview-api').textContent
+                }</p>
+                <button class="modalcard__btn">Add to My List</button>
+                </div>
+                </div>
               </div>`);
         instance.show();
+        document
+          .querySelector('.modalcard__close')
+          .addEventListener('click', () => {
+            instance.close();
+          });
       });
     });
   }

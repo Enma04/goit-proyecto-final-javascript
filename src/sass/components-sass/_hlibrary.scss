@@ -11,19 +11,18 @@ header {
   background-size: cover;
 }
 ::-webkit-scrollbar {
-  display: none;
+  display: block;
 }
 .navigation__container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 25px;
   list-style: none;
 }
 .logo {
   display: flex;
   align-self: flex-end;
-  margin-right: 500px;
 }
 
 a {

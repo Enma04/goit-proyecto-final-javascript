@@ -4,6 +4,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: Roboto;
+}
+p,
+h1 {
+  margin: 0;
+}
+button {
+  border: none;
+}
 body::-webkit-scrollbar {
   width: 12px; /* Ancho del scroll */
 }
@@ -17,22 +27,22 @@ body::-webkit-scrollbar-thumb {
   border-radius: 6px; /* Radio de las esquinas del thumb */
 }
 
-.dark{
+.dark {
   background-color: #606060;
   color: #e6e0e0;
 }
 
-.list_api{
+.list_api {
   margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   //gap: calc((100% - 1050px)/3); --> para 3 tarjetas
   //gap: calc((100% - 1650px)/3); --> para 4 tarjetas
-  gap: calc((100% - 1350px)/3);
+  gap: calc((100% - 1350px) / 3);
 }
 
-.card{
+.card {
   margin-bottom: 5%;
   width: 350px;
   padding: 20px 25px;
@@ -40,7 +50,7 @@ body::-webkit-scrollbar-thumb {
   border: 0.5px solid rgb(194, 194, 194);
   border-radius: 10px;
   cursor: pointer;
-  
+
   /* background-image: linear-gradient(
     to left,
     rgb(176, 186, 214),
@@ -48,21 +58,21 @@ body::-webkit-scrollbar-thumb {
   ); */
 }
 
-.card:hover{
-  -webkit-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
-  box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
+.card:hover {
+  -webkit-box-shadow: 0px 6px 24px 9px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 6px 24px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 24px 9px rgba(0, 0, 0, 0.5);
 }
 
-.card > img{
+.card > img {
   width: 300px;
 }
 
-.generes{
+.generes {
   font-weight: 600;
   color: #8f1021;
 }
 
-.dark .generes{
+.dark .generes {
   color: rgb(218, 143, 31);
 }

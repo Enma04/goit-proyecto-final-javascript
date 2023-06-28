@@ -1,0 +1,120 @@
+.modalcard {
+  background-color: white;
+  width: 280px;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    gap: 30px;
+    padding: 50px 30px 40px;
+    flex-wrap: nowrap;
+    width: 700px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 882px;
+    height: 568px;
+    padding: 50px 30px 40px;
+  }
+  &__img {
+    width: 240px;
+    height: 356.571px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      width: 264px;
+      height: 373.551px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 396px;
+      height: 477.803px;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    &:hover {
+      color: #750b0b;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+      gap: 60px;
+    }
+  }
+  &__list-description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__item-description {
+    color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  &__info {
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+    &-list {
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+    }
+  }
+  &__span {
+    color: #fff;
+    background-color: #750b0b;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+  }
+  &__about {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  &__overview {
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 21px;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  &__btn {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 12px 15px;
+    font-weight: 700;
+  }
+}

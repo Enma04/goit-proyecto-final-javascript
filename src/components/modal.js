@@ -12,11 +12,12 @@ export function modal(list) {
                 }" alt="${element.querySelector('#idTitleApi').textContent}" />
                 <i class="ri-close-fill ri-2x modalcard__close"></i>
                 <div class="modalcard__wrapper">
+                <div class="modalcard__box">
                 <h1 class="modalcard__title">${
                   element.querySelector('#idTitleApi').textContent
                 }</h1>
-                <div class="modalcard__box">
-                <ul class="modalcard__list-description">
+                <div class="modalcard__list-box">
+                  <ul class="modalcard__list-description">
                 <li class="modalcard__item-description"><p class="modalcard__description">Vote / Votes </p></li>
                 <li class="modalcard__item-description"><p class="modalcard__description">Popularity </p></li>
                 <li class="modalcard__item-description"><p class="modalcard__description">Original Title </p></li>
@@ -39,11 +40,14 @@ export function modal(list) {
                 }</p></li>
                 </ul>
                 </div>
-                <h3 class="modalcard__about">About</h3>
+                </div>
+                <div class="modalcard__mini-wrapper">
+                  <h3 class="modalcard__about">About</h3>
                 <p class="modalcard__overview">${
                   element.querySelector('.overview-api').textContent
                 }</p>
                 <button class="modalcard__btn">Add to My List</button>
+                </div>
                 </div>
               </div>`);
         instance.show();

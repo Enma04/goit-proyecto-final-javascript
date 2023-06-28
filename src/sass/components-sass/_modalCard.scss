@@ -1,16 +1,28 @@
 .modalcard {
   background-color: white;
+  z-index: 1000;
+  border-radius: 20px;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  position: relative;
   width: 280px;
-  padding: 50px 20px;
+  padding: 48px 20px 40px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 450px) {
+    top: 140px;
+    width: 80%;
+  }
   @media screen and (min-width: 768px) {
+    top: 0;
     gap: 30px;
     padding: 50px 30px 40px;
     flex-wrap: nowrap;
     width: 700px;
+    justify-content: start;
+    align-items: start;
   }
   @media screen and (min-width: 1200px) {
     width: 882px;
@@ -18,8 +30,8 @@
     padding: 50px 30px 40px;
   }
   &__img {
-    width: 240px;
-    height: 356.571px;
+    width: 220px;
+    height: 336.571px;
     margin-bottom: 10px;
     @media screen and (min-width: 768px) {
       width: 264px;
@@ -49,11 +61,12 @@
   &__box {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    flex-direction: column;
     margin-bottom: 20px;
-    @media screen and (min-width: 768px) {
-      gap: 60px;
-    }
+  }
+  &__list-box {
+    display: flex;
+    gap: 20%;
   }
   &__list-description {
     display: flex;
@@ -116,5 +129,22 @@
     border-radius: 20px;
     padding: 12px 15px;
     font-weight: 700;
+  }
+}
+.basicLightbox {
+  overflow: auto;
+  height: 100% !important;
+  &__placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 160px;
+    @media screen and (min-width: 450px) {
+      top: 140px;
+    }
+    @media screen and (min-width: 768px) {
+      top: 0;
+    }
   }
 }

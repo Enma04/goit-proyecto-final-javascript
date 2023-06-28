@@ -53,15 +53,15 @@ let addImages = page => {
       </li>`
         );
 
-        for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
-          if (localStorage.getItem(`${i}`) !== null) {
+        for (let i = 1; i <= JSON.parse(localStorage.getItem('watched')); i++) {
+          if (localStorage.getItem(`watched${i}`) !== null) {
             if (
-              JSON.parse(localStorage.getItem(`${i}`)).original_title ===
+              JSON.parse(localStorage.getItem(`watched${i}`)).original_title ===
               element.original_title
             ) {
               let boton = document.querySelectorAll('#watched')[index];
               console.log("Boton: ", boton);
-              boton.setAttribute('value', `${i}`);
+              boton.setAttribute('watched', `${i}`);
               boton.classList.add('addedBTN');
               console.log('Boton: ', boton);
             }
@@ -128,7 +128,7 @@ listApi.addEventListener('click', event => {
   //BOTON WATCHED
   if (event.target.id === 'watched') {
     console.log("Id: ", event.target.id);
-    list(event, vec);
+    list(event, vec, 'watched');
   }
 });
 

@@ -31,7 +31,9 @@ body::-webkit-scrollbar-thumb {
   background-color: #606060;
   color: #e6e0e0;
 }
-
+.translate__swich {
+  transform: translateX(15px) !important;
+}
 .list_api {
   margin-top: 5%;
   display: flex;

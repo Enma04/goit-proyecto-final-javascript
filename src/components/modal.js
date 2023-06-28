@@ -56,4 +56,3 @@ export function modal(list) {
     });
   }
 }
-// falta mobile bien hecho scss

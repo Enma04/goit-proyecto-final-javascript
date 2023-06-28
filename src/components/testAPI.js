@@ -20,7 +20,7 @@ let addImages = page => {
       res.data.results.forEach((element, index) => {
         vec = res.data.results;
 
-        console.log("Estoy en el elemento: ", index);
+        console.log('Estoy en el elemento: ', index);
 
         element.genre_ids.forEach(genre => {
           genres.forEach(dataGenre => {
@@ -35,25 +35,32 @@ let addImages = page => {
         listApi.insertAdjacentHTML(
           'beforeend',
           `<li id="idItemApi" class="card">
-        <img src="${
+        <img class="imgApi" src="${
           element.poster_path
             ? `${imageBaseURL}${element.poster_path}`
             : 'https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg'
         }" alt="${element.title}" />
         <h3 id="idTitleApi">${element.original_title}</h3>
-        <p class="generes">${unionGenres}</p>
-        <p class="date">${element.release_date.split('-')[0]}</p>
+        <p class="generes-api">${unionGenres}</p>
+        <p class="date-api">${element.release_date.split('-')[0]}</p>
         <button class="mylistBTN">Add</button>
+        <p class="vote-api filter">${element.vote_average}</p>
+        <p class="vote-count-api filter"> ${element.vote_count}</p>
+          <p class="popularity-api filter">${element.popularity}</p>
+          <p class="overview-api filter">${element.overview}</p>
       </li>`
         );
 
         for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
           if (localStorage.getItem(`${i}`) !== null) {
-            if (JSON.parse(localStorage.getItem(`${i}`)).original_title === element.original_title) {
+            if (
+              JSON.parse(localStorage.getItem(`${i}`)).original_title ===
+              element.original_title
+            ) {
               let boton = document.querySelectorAll('.mylistBTN')[index];
-              boton.setAttribute("value", `${i}`);
-              boton.classList.add("addedBTN");
-              console.log("Boton: ", boton);
+              boton.setAttribute('value', `${i}`);
+              boton.classList.add('addedBTN');
+              console.log('Boton: ', boton);
             }
           }
         }
@@ -124,22 +131,22 @@ listApi.addEventListener('click', event => {
     return;
   }
 
-  let name =
-    event.target.parentElement.childNodes[0].nextElementSibling.alt;
+  let name = event.target.parentElement.childNodes[0].nextElementSibling.alt;
 
   //console.log("evento: ", event.target);
-  event.target.classList.toggle("addedBTN");
+  event.target.classList.toggle('addedBTN');
 
   //Estoy añadiendo el elemento a mylist
-  if(event.target.classList.contains("addedBTN")) {
-    event.target.textContent = "Added";
+  if (event.target.classList.contains('addedBTN')) {
+    event.target.textContent = 'Added';
 
     for (let i = 0; i < vec.length; i++) {
       if (vec[i].original_title === name) {
-
         for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
           if (localStorage.getItem(`${j}`) !== null) {
-            if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+            if (
+              JSON.parse(localStorage.getItem(`${j}`)).original_title === name
+            ) {
               return;
             }
           }
@@ -152,12 +159,12 @@ listApi.addEventListener('click', event => {
         //count = 0;
       }
     }
-  
+
     console.log('Hice click!', name);
   }
   //Estoy eliminando el elemento a mylist
-  else{
-    event.target.textContent = "Add";
+  else {
+    event.target.textContent = 'Add';
 
     for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
       if (localStorage.getItem(`${j}`) !== null) {
@@ -168,6 +175,5 @@ listApi.addEventListener('click', event => {
     }
   }
 
-  console.log("evento: ", event);
-
+  console.log('evento: ', event);
 });

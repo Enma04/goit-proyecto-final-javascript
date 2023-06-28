@@ -1,0 +1,23 @@
+.slider {
+  width: 100%;
+  overflow: hidden;
+  //background-image: linear-gradient(to left, #b0bad6, #c5a6a1);
+  padding: 20px 25px;
+  box-shadow: 0 6px 24px 9px #00000080;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 10px;
+}
+
+.movie {
+  flex: 0 0 10%;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}

@@ -58,3 +58,20 @@ export function list(event, vec, type) {
     console.log('evento: ', event);
 
 }//FIN FUNCTION
+
+export function estadoBotones(element, type, index) {
+    for (let i = 1; i <= JSON.parse(localStorage.getItem(`${type}`)); i++) {
+        if (localStorage.getItem(`${type}${i}`) !== null) {
+            if (
+            JSON.parse(localStorage.getItem(`${type}${i}`)).original_title ===
+            element.original_title
+            ) {
+                let boton = document.querySelectorAll(`#${type}`)[index];
+                console.log("Boton: ", boton);
+                boton.textContent = `Added to ${type}`;
+                boton.setAttribute(`${type}`, `${i}`);
+                boton.classList.add('addedBTN');
+            }
+        }
+    }
+}

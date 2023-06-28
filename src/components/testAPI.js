@@ -3,7 +3,7 @@ import axios from 'axios';
 import 'remixicon/fonts/remixicon.css';
 import { genres } from './dataGenres';
 import { modal } from './modal';
-import { list } from './addList';
+import { list, estadoBotones } from './addList';
 export const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
 let cont = 1;
 let groupGenres = [];
@@ -52,34 +52,9 @@ let addImages = page => {
           <p class="overview-api filter">${element.overview}</p>
       </li>`
         );
-
-        for (let i = 1; i <= JSON.parse(localStorage.getItem('watched')); i++) {
-          if (localStorage.getItem(`watched${i}`) !== null) {
-            if (
-              JSON.parse(localStorage.getItem(`watched${i}`)).original_title ===
-              element.original_title
-            ) {
-              let boton = document.querySelectorAll('#watched')[index];
-              console.log("Boton: ", boton);
-              boton.setAttribute('watched', `${i}`);
-              boton.classList.add('addedBTN');
-            }
-          }
-        }
-
-        for (let i = 1; i <= JSON.parse(localStorage.getItem('queue')); i++) {
-          if (localStorage.getItem(`queue${i}`) !== null) {
-            if (
-              JSON.parse(localStorage.getItem(`queue${i}`)).original_title ===
-              element.original_title
-            ) {
-              let boton = document.querySelectorAll('#queue')[index];
-              console.log("Boton: ", boton);
-              boton.setAttribute('queue', `${i}`);
-              boton.classList.add('addedBTN');
-            }
-          }
-        }
+        
+        estadoBotones(element, 'watched', index);
+        estadoBotones(element, 'queue', index);
 
         groupGenres = [];
       });

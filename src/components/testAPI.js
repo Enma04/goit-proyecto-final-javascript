@@ -44,8 +44,8 @@ let addImages = page => {
         <h3 id="idTitleApi">${element.original_title}</h3>
         <p class="generes-api">${unionGenres}</p>
         <p class="date-api">${element.release_date.split('-')[0]}</p>
-        <button id="watched" class="mylistBTN">Add</button>
-        <button id="queue" class="mylistBTN">Add to Queue</button>
+        <button id="watched" class="mylistBTN">Add to watched</button>
+        <button id="queue" class="mylistBTN">Add to queue</button>
         <p class="vote-api filter">${element.vote_average}</p>
         <p class="vote-count-api filter"> ${element.vote_count}</p>
           <p class="popularity-api filter">${element.popularity}</p>
@@ -63,7 +63,20 @@ let addImages = page => {
               console.log("Boton: ", boton);
               boton.setAttribute('watched', `${i}`);
               boton.classList.add('addedBTN');
-              console.log('Boton: ', boton);
+            }
+          }
+        }
+
+        for (let i = 1; i <= JSON.parse(localStorage.getItem('queue')); i++) {
+          if (localStorage.getItem(`queue${i}`) !== null) {
+            if (
+              JSON.parse(localStorage.getItem(`queue${i}`)).original_title ===
+              element.original_title
+            ) {
+              let boton = document.querySelectorAll('#queue')[index];
+              console.log("Boton: ", boton);
+              boton.setAttribute('queue', `${i}`);
+              boton.classList.add('addedBTN');
             }
           }
         }
@@ -130,11 +143,9 @@ listApi.addEventListener('click', event => {
     console.log("Id: ", event.target.id);
     list(event, vec, 'watched');
   }
+  //BOTON QUEUE
+  if (event.target.id === 'queue') {
+    console.log("Id: ", event.target.id);
+    list(event, vec, 'queue');
+  }
 });
-
-
-/* const queue = document.querySelector('.queue');
-
-queue.addEventListener('click', event => {
-  console.log("Hice click en Queue!");
-}); */

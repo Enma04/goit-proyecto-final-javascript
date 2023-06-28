@@ -15,7 +15,7 @@ export function list(event, vec, type) {
     //Estoy añadiendo el elemento a mylist
     if (event.target.classList.contains('addedBTN')) {
 
-        event.target.textContent = 'Added';
+        event.target.textContent = `Added to ${type}`;
 
         for (let i = 0; i < vec.length; i++) {
 
@@ -43,13 +43,13 @@ export function list(event, vec, type) {
     }
     //Estoy eliminando el elemento a mylist
     else {
-        event.target.textContent = 'Add';
-        for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
+        event.target.textContent = `Add to ${type}`;
+        for (let j = 1; j <= JSON.parse(localStorage.getItem(`${type}`)); j++) {
 
-            if (localStorage.getItem(`${j}`) !== null) {
+            if (localStorage.getItem(`${type}${j}`) !== null) {
 
-                if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
-                    localStorage.removeItem(`${j}`);
+                if (JSON.parse(localStorage.getItem(`${type}${j}`)).original_title === name) {
+                    localStorage.removeItem(`${type}${j}`);
                 }
             }
         }

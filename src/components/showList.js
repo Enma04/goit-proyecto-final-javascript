@@ -33,4 +33,4 @@ export function deleteItem(event, type) {
             }
         }
     }
-}
+}//FIN DE LA FUNCION

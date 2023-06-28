@@ -1,5 +1,5 @@
 import { imageBaseURL } from './testAPI';
-const listaFav = document.querySelector('.listaFav');
+const listaFav = document.getElementById('listaFav');
 
 for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
 
@@ -18,3 +18,24 @@ for (let i = 1; i <= JSON.parse(localStorage.getItem('conteo')); i++) {
     );
   }
 }
+
+listaFav.addEventListener('click', event => {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  console.log("Hice click!");
+  let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+
+  console.log("name = ", name);
+
+  for (let j = 1; j <= JSON.parse(localStorage.getItem('conteo')); j++) {
+    if (localStorage.getItem(`${j}`) !== null) {
+      if (JSON.parse(localStorage.getItem(`${j}`)).original_title === name) {
+        localStorage.removeItem(`${j}`);
+        window.location.reload()
+        return;
+      }
+    }
+  }
+});

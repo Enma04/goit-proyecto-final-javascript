@@ -188,6 +188,12 @@ estilos del header library
   border: 1.5px solid #fff;
   border-radius: 10px;
   position: relative;
+
+  &:hover, &:focus, &:active {
+    color: #cf5d59;
+    border-color: #cf5d59;
+    background-color: rgba(0, 0, 0, 50%);
+  }
 }
 
 .btn_queue {
@@ -203,6 +209,12 @@ estilos del header library
   border: 1.5px solid #fff;
   border-radius: 10px;
   position: relative;
+
+  &:hover, &:focus, &:active {
+    color: #cf5d59;
+    border-color: #cf5d59;
+    background-color: rgba(0, 0, 0, 50%);
+  }
 }
 
 @media (min-width: 320px) and (max-width: 768px) {

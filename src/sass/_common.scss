@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb {
 
 .card {
   //margin-bottom: 5%;
-  width: 350px;
+  max-width: 350px;
   padding: 20px 25px;
   line-height: 1em;
   border: 0.5px solid rgb(194, 194, 194);

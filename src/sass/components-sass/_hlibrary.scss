@@ -223,28 +223,42 @@ estilos del header library
   }
 }
 
+@media (min-width:768px) and (max-width: 1200px) {
+  a {
+    color: #b16f78;
+  }
+  .container {
+    width: 738px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   header {
     background-image: url(/src/images/movil.png);
+    background-size: cover;
   }
   a {
-    color: #fff;
-    font-weight: 400;
-    font-size: 10px;
+    color: #b16f78;
+    font-weight: 600;
+    font-size: 11px;
   }
   .navigation__container {
     display: block;
     justify-content: center;
   }
   .menu {
-    justify-content: right;
-    align-items: center;
+    justify-content: center;
     margin-left: 15px;
   }
 
   .logo {
     display: flex;
     margin-right: 0px;
+    justify-content: center;
+    margin-bottom: 10px;
   }
   .toolbar {
     top: 0px;
@@ -253,6 +267,11 @@ estilos del header library
   .theme-swich {
     margin-right: 0px;
   }
+
+  .btn {
+    margin-top: 20px;
+  }
+  /*
   .btn_watch {
     width: 80px;
     font-size: 12px;
@@ -265,4 +284,5 @@ estilos del header library
     font-size: 12px;
     padding: 5px 10px;
   }
+  */
 }

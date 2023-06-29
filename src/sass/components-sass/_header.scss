@@ -90,7 +90,7 @@ ul {
   display: flex;
   position: relative;
   width: 280px;
-  margin: 0 auto 22px;
+  margin: 20px auto 22px;
   margin-bottom: 50px;
   justify-content: left;
 }
@@ -206,18 +206,24 @@ ul {
   transition: transform 0.25s var(--timing-function);
 }
 
+@media (min-width:768px) and (max-width: 1200px) {
+  a {
+    color: #b16f78;
+  }
+  .container {
+    width: 738px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   header {
     background-image: url(/src/images/movil.png);
     background-size: cover;
   }
   a {
-    color: #fff;
+    color: #b16f78;
     font-weight: 600;
     font-size: 11px;
-  }
-  .container {
-    width: 500px;
   }
 
   .navigation__container {
@@ -231,8 +237,13 @@ ul {
   .logo {
     display: flex;
     margin-right: 0px;
-    justify-content: left;
+    justify-content: center;
+    margin-bottom: 10px;
   }
+  .search {
+    justify-content: center;
+  }
+
   .toolbar {
     top: 0px;
   }

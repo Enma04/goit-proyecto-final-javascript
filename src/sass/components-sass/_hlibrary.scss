@@ -54,6 +54,7 @@ ul {
 }
 
 .menu_link {
+  font-size: 18px;
   position: relative;
 
   &:hover,
@@ -234,10 +235,6 @@ estilos del header library
     justify-content: right;
     align-items: center;
     margin-left: 15px;
-  }
-
-  .menu_items {
-    margin-right: 20px;
   }
 
   .logo {

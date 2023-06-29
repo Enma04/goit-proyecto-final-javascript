@@ -1,39 +1,40 @@
-<link rel="stylesheet" href="../sass/components-sass/_hlibrary.scss">
-<header class="header">
-    <div class="navigation__container">
-        <a href="" class="logo">
-            <svg class="logo_svg"><use href='../images/icons.svg#icon-film'></use></svg>
-            <span class="logo__text">Filmoteka</span>
-        </a>
-        <nav class="navigation">
-            <ul class="menu">
-                <li class="menu_items">
-                    <a href="../index.html">Home</a>
-                </li>
-                <li class="menu_itemsl">
-                    <a href="">My library</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="btn">
-        <button class="btn_watch" type="submit">Watched</button>
-        <button class="btn_queue" type="submit">Queue</button>
-    </div>
-    <div class="toolbar container">
-        <div class="theme-swich">
-        <svg class="theme-swich_icon">
-            <use href='../images/icons.svg#icon-brightness-contrast'></use>
-        </svg>
-        <div class="theme-swich_control">
-            <input class="theme-swich_light" type="checkbox" name="theme" id="switch-toggle">
-            <label aria-hidden="true" class="theme-swich-toggle" for=""></label>
-            <div aria-hidden="true" class="theme-swich_maker"></div>
+<body class="body">
+    <link rel="stylesheet" href="../sass/components-sass/_hlibrary.scss">
+    <header class="header">
+        <div class="navigation__container container">
+            <a href="" class="logo">
+                <svg class="logo_svg"><use href='../images/icons.svg#icon-film'></use></svg>
+                <span class="logo__text">Filmoteka</span>
+            </a>
+            <nav class="navigation">
+                <ul class="menu">
+                    <li class="menu_items">
+                        <a class="menu_link" href="../index.html">Home</a>
+                    </li>
+                    <li class="menu_itemsl">
+                        <a class="menu_link" href="">My library</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        
-        
-    </div>
+        <div class="btn">
+            <button class="btn_watch" type="submit">Watched</button>
+            <button class="btn_queue" type="submit">Queue</button>
+        </div>
+        <div class="toolbar">
+            <div class="theme-swich">
+                <svg class="theme-swich_icon">
+                    <use id="swich__sun" href='../images/icons.svg#icon-brightness-contrast'></use>
+                    <use id="swich__moon" class="filter" href='../images/icons.svg#icon-moon'></use>
+                </svg>
+                <div class="theme-swich_control">
+                    <input class="theme-swich_light" type="checkbox" name="theme" id="switch-toggle">
+                    <button class="theme-swich-toggle"></button>
+                    <div aria-hidden="true" class="theme-swich_maker"></div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../components/styleDark.js"></script>
     </header>
-    
 </body>
-</html>
+

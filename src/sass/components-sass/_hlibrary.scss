@@ -22,7 +22,6 @@ header {
 }
 .logo {
   display: flex;
-  align-self: flex-end;
 }
 
 a {
@@ -46,18 +45,43 @@ ul {
   text-transform: none;
 }
 
-.navigation {
-  display: block;
-}
-
 .menu {
   display: flex;
 }
 
 .menu_items {
-  position: relative;
-  margin-right: 50%;
+  margin-right: 50px;
 }
+
+.menu_link {
+  font-size: 18px;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #cf5d59;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: calc(100% + 15px);
+    width: 100%;
+    background-color: #cf5d59;
+    height: 2px;
+    border-radius: 1px;
+    opacity: 0;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    opacity: 1;
+  }
+}
+
 .menu_itemsl {
   white-space: nowrap;
   overflow: visible;
@@ -165,6 +189,12 @@ estilos del header library
   border: 1.5px solid #fff;
   border-radius: 10px;
   position: relative;
+
+  &:hover, &:focus, &:active {
+    color: #cf5d59;
+    border-color: #cf5d59;
+    background-color: rgba(0, 0, 0, 50%);
+  }
 }
 
 .btn_queue {
@@ -180,6 +210,12 @@ estilos del header library
   border: 1.5px solid #fff;
   border-radius: 10px;
   position: relative;
+
+  &:hover, &:focus, &:active {
+    color: #cf5d59;
+    border-color: #cf5d59;
+    background-color: rgba(0, 0, 0, 50%);
+  }
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -199,10 +235,6 @@ estilos del header library
     justify-content: right;
     align-items: center;
     margin-left: 15px;
-  }
-
-  .menu_items {
-    margin-right: 20px;
   }
 
   .logo {

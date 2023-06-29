@@ -39,22 +39,43 @@
   cursor: pointer;
   color: #fff;
 }
+.ri-facebook-fill:hover {
+  transform: scale(1.5);
+}
+
 .ri-instagram-line {
   cursor: pointer;
   color: #fff;
+}
+.ri-instagram-line:hover {
+  transform: scale(1.5);
 }
 .ri-youtube-fill {
   cursor: pointer;
   color: #fff;
 }
+
+.ri-youtube-fill:hover {
+  transform: scale(1.5);
+}
+
 .ri-twitter-fill {
   cursor: pointer;
   color: #fff;
 }
+
+.ri-twitter-fill:hover {
+  transform: scale(1.5);
+}
+
 .ri-tiktok-fill {
   cursor: pointer;
   color: #fff;
 }
+.ri-tiktok-fill:hover {
+  transform: scale(1.5);
+}
+
 .ri-copyright-line {
   color: #fff;
 }
@@ -65,6 +86,10 @@
   margin: 0;
 }
 
+.logof:hover {
+  transform: scale(1.1);
+}
+
 .logof_svg {
   width: 35px;
   height: 35px;
@@ -72,6 +97,7 @@
   align-self: center;
   margin-right: 10px;
 }
+
 a {
   text-decoration: none;
 }
@@ -120,13 +146,36 @@ a {
   color: #fff;
   font-weight: 600;
 }
+.text-copy-Students:hover {
+  font-size: 16px;
+}
+
 #modal {
-  width: 500px;
+  position: sticky;
+  position: fixed;
+  width: 600px;
   height: 300px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+  top: auto;
+
+  /*
   border-radius: 10px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 1px 1px rgba(0, 0, 0, 0.16);
+*/
+
   border: none;
+
+  align-items: center;
+  height: 50vh;
+}
+
+#modal::backdrop {
+  position: fixed;
+  display: flex;
+  inset: 0px;
+  background: rgba(87, 87, 87, 0.7);
 }
 
 .closemodal {
@@ -142,10 +191,161 @@ a {
   font-weight: 600;
   font-size: 16px;
   transition: cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 .closemodal:hover,
 .closemodal:focus {
   color: #5f1821;
+  transform: scale(1.2);
 }
-@media (min-width: 320px) and (max-width: 768px) {
+
+.closem {
+  display: none;
+  position: fixed;
+}
+dialog {
+  position: static;
+}
+
+.show {
+  position: fixed;
+}
+
+.swiper {
+  margin-top: 15px;
+  width: 100%;
+
+  align-items: center;
+  justify-self: unset;
+}
+
+.swiper-wrapper {
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mySwiper {
+  max-width: 100%;
+  display: -webkit-inline-flex;
+}
+.card {
+  width: 50rem;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0 0 1em rgb(0, 0, 0, 0.2);
+  padding: 1em 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.swiper-slider:not(.swiper-slide-active) {
+  filter: blur(1px);
+}
+
+.swiper-slide {
+  width: 60%;
+}
+.card__image {
+  display: block;
+  width: 13em;
+}
+.card__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.card__name {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  padding-bottom: 0.2em;
+  top: 0.2em;
+}
+
+.card__title {
+  color: #5f1821;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0.2em;
+}
+
+.card__text {
+  text-align: left;
+  font-size: 1rem;
+  margin: 0.5em 2em;
+}
+
+.card__btn {
+  background-color: #c3c2c2;
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.card__btn:hover {
+  background-color: #5f1821;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.container-icons-modal {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: start;
+  color: #c3c2c2;
+  gap: 40px;
+}
+.container-icons-modal::after,
+.container-icons-modal::before {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 1px;
+  top: 2.3em;
+}
+
+.container-icons-modal .ri-facebook-fill {
+  color: #c3c2c2;
+}
+.container-icons-modal .ri-facebook-fill:hover {
+  color: #5f1821;
+}
+
+.container-icons-modal .ri-twitter-fill {
+  color: #c3c2c2;
+}
+.container-icons-modal .ri-twitter-fill:hover {
+  color: #5f1821;
+}
+.container-icons-modal .ri-github-fill {
+  color: #c3c2c2;
+  cursor: pointer;
+}
+.container-icons-modal .ri-github-fill:hover {
+  color: #5f1821;
+  transform: scale(1.5);
 }

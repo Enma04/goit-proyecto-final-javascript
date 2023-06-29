@@ -13,7 +13,7 @@ export function lista(listaFav, type) {
                 <h3>${element.original_title}</h3>
                 <img src="${imageBaseURL}${element.poster_path}" alt="${element.title}" />
                 <p>${element.overview}</p>
-                <button id="deleteWatched" class="mylistBTN addedBTN">Added</button>
+                <button id="delete${type}" class="mylistBTN addedBTN">Added to ${type}</button>
             </li>`
             );
         }

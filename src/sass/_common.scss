@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0px auto;
 }
 
@@ -47,7 +47,7 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
   justify-content: center;
   
-  gap: 50px; //--> para 3 tarjetas
+  gap: 40px; //--> para 3 tarjetas
   //gap: calc((100% - 1650px)/3); --> para 4 tarjetas
   //gap: calc((100% - 1350px)/3);
   //gap: calc((100% - 1350px) / 3);
@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb {
   border: 0.5px solid rgb(194, 194, 194);
   border-radius: 10px;
   cursor: pointer;
-  flex-basis: calc((100% - 100px) / 3);
+  flex-basis: calc((100% - 80px) / 3);
   /* background-image: linear-gradient(
     to left,
     rgb(176, 186, 214),
@@ -86,4 +86,13 @@ body::-webkit-scrollbar-thumb {
 
 .dark .generes {
   color: rgb(218, 143, 31);
+}
+
+@media (min-width:768px) and (max-width: 1200px) {
+  .list_api {
+    gap: 38px;
+  }
+  .card {
+    flex-basis: calc((100% - 38px) / 2);
+  }
 }

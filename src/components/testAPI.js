@@ -122,14 +122,6 @@ addImages(cont);
 //--------------------------- SECTION FOR MY LIST
 
 listApi.addEventListener('click', event => {
-  //BOTON WATCHED
-  if (event.target.id === 'watched') {
-    console.log("Id: ", event.target.id);
-    list(event, vec, 'watched');
-  }
-  //BOTON QUEUE
-  if (event.target.id === 'queue') {
-    console.log("Id: ", event.target.id);
-    list(event, vec, 'queue');
-  }
+  console.log("Id: ", event.target.id);
+  list(event, vec, event.target.id);
 });

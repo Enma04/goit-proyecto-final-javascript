@@ -1,15 +1,24 @@
-// importaciones y declaraciones
+//IMPORTACIONES
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css';
 import { genres } from './dataGenres';
 import { modal } from './modal';
+
+//EXPORTACIONES
 import { list, estadoBotones } from './addList';
 export const apiKey = '6617c9b64f7274de96d2c2a2c77c593e';
+export const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+
+//DECLARACIONES
 let cont = 1;
 let groupGenres = [];
-export const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 const listApi = document.querySelector('.list_api');
 const listPages = document.getElementById('listPages');
+
+
+
+//--------------------------------------------------------------------------------------------------------
+//-------------------------- FUNCIONALIDAD
 
 // funcion q genera los items con sus respectivos valores sacados de la api de TMDB
 let addImages = page => {
@@ -20,8 +29,6 @@ let addImages = page => {
     .then(res => {
       res.data.results.forEach((element, index) => {
         vec = res.data.results;
-
-        console.log('Estoy en el elemento: ', index);
 
         element.genre_ids.forEach(genre => {
           genres.forEach(dataGenre => {
@@ -42,7 +49,7 @@ let addImages = page => {
             : 'https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg'
         }" alt="${element.title}" />
         <h3 id="idTitleApi">${element.original_title}</h3>
-        <p class="generes-api">${unionGenres}</p>
+        <p class="generes-api generes">${unionGenres}</p>
         <p class="date-api">${element.release_date.split('-')[0]}</p>
         <button id="watched" class="mylistBTN">Add to watched</button>
         <button id="queue" class="mylistBTN">Add to queue</button>
@@ -109,8 +116,10 @@ let addImages = page => {
 // ejecuto la funcion
 addImages(cont);
 
-//------------------------------------------------------------------------
-// --------------- SECTION FOR MY LIST
+
+
+//--------------------------------------------------------------------------------------------------------
+//--------------------------- SECTION FOR MY LIST
 
 listApi.addEventListener('click', event => {
   //BOTON WATCHED

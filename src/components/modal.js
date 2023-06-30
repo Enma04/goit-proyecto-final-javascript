@@ -46,7 +46,6 @@ export function modal(list) {
                 <p class="modalcard__overview">${
                   element.querySelector('.overview-api').textContent
                 }</p>
-                <button class="modalcard__btn">Add to My List</button>
                 </div>
                 </div>
               </div>`);

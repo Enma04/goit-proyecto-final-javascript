@@ -8,29 +8,21 @@ export function list(event, vec, type) {
         ) {
         count = localStorage.getItem(`${type}`);
     }
-
-    //console.log("evento: ", event.target);
     event.target.classList.toggle('addedBTN');
 
     //Estoy añadiendo el elemento a mylist
     if (event.target.classList.contains('addedBTN')) {
-
         event.target.textContent = `Added to ${type}`;
 
         for (let i = 0; i < vec.length; i++) {
-
             if (vec[i].original_title === name) {
-
                 for (let j = 1; j <= JSON.parse(localStorage.getItem(`${type}`)); j++) {
-
                     if (localStorage.getItem(`${type}${j}`) !== null) {
-
                         if (JSON.parse(localStorage.getItem(`${type}${j}`)).original_title === name) {
                             return;
                         }
                     }
                 }
-
                 count++;
                 localStorage.setItem(`${type}${count}`, JSON.stringify(vec[i]));
                 localStorage.setItem(`${type}`, `${count}`);
@@ -38,16 +30,13 @@ export function list(event, vec, type) {
                 //count = 0;
             }
         }
-
         console.log('Hice click!', name);
     }
     //Estoy eliminando el elemento a mylist
     else {
         event.target.textContent = `Add to ${type}`;
         for (let j = 1; j <= JSON.parse(localStorage.getItem(`${type}`)); j++) {
-
             if (localStorage.getItem(`${type}${j}`) !== null) {
-
                 if (JSON.parse(localStorage.getItem(`${type}${j}`)).original_title === name) {
                     localStorage.removeItem(`${type}${j}`);
                 }
@@ -67,7 +56,6 @@ export function estadoBotones(element, type, index) {
             element.original_title
             ) {
                 let boton = document.querySelectorAll(`#${type}`)[index];
-                console.log("Boton: ", boton);
                 boton.textContent = `Added to ${type}`;
                 boton.setAttribute(`${type}`, `${i}`);
                 boton.classList.add('addedBTN');

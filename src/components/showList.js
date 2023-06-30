@@ -7,7 +7,7 @@ export function lista(listaFav, type) {
         if (localStorage.getItem(`${type}${i}`) !== null) {
             let element = JSON.parse(localStorage.getItem(`${type}${i}`));
             let groupGenres = [];
-            console.log('element = ', element);
+            //console.log('element = ', element);
 
             element.genre_ids.forEach(genre => {
                 genres.forEach(dataGenre => {
@@ -40,7 +40,7 @@ export function lista(listaFav, type) {
 }//FIN DE LA FUNCION
 
 export function deleteItem(event, type) {
-    let name = event.target.parentElement.childNodes[0].nextElementSibling.innerHTML;
+    let name = event.target.parentElement.childNodes[0].nextElementSibling.alt;
 
     for (let j = 1; j <= JSON.parse(localStorage.getItem(`${type}`)); j++) {
         if (localStorage.getItem(`${type}${j}`) !== null) {

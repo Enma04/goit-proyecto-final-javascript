@@ -1,0 +1,2 @@
+window.addEventListener("DOMContentLoaded",function(){let e=document.querySelector(".slider-container"),n=0,t=0;function i(){(n-=1)<-301&&(n+=301,e.appendChild(e.firstElementChild)),e.style.transform=`translateX(${n}px)`,t=requestAnimationFrame(i)}e.addEventListener("mouseenter",function(){cancelAnimationFrame(t)}),e.addEventListener("mouseleave",function(){t=requestAnimationFrame(i)})});
+//# sourceMappingURL=index.401c48b3.js.map

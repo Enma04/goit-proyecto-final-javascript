@@ -1,0 +1,43 @@
+<header class="header" id="idHeader">
+    <div class="navigation__container container">
+        <a href="" class="logo">
+            <svg class="logo_svg"><use href='./images/icons.svg#icon-film'></use></svg>
+            <span class="logo__text">Filmoteka</span>
+        </a>
+        <nav class="navigation">
+            <ul class="menu">
+                <li class="menu_items">
+                    <a class="menu_link" href='./index.html'>Home</a>
+                </li>
+                <li class="menu_itemsl">
+                    <a class="menu_link" href='/src/partials/mylist.html'>My library</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="search-form" class="search">
+        <input autocomplete="off" class="input_search" id="idInputSearch" placeholder="Search for movie ...">
+        <button class="search_button" type="submit" id="idSearchButton">
+            <svg class="icon-search"> <use href='./images/icons.svg#icon-search'></use></svg>
+        </button>
+        <div id="results_search">
+            <ul id="idSearchList">
+            </ul>
+        </div>
+    </div>
+    <div class="toolbar">
+        <div class="theme-swich">
+        <svg class="theme-swich_icon">
+            <use id="swich__sun" href='./images/icons.svg#icon-brightness-contrast'></use>
+            <use id="swich__moon" class="filter" href='./images/icons.svg#icon-moon'></use>
+        </svg>
+        <div class="theme-swich_control">
+            <input class="theme-swich_light" type="checkbox" name="theme" id="switch-toggle">
+            <button class="theme-swich-toggle"></button>
+            <div aria-hidden="true" class="theme-swich_maker"></div>
+        </div>
+    </div>
+</header>
+<script type="module" src="./components/styleDark.js"></script>
+
+    

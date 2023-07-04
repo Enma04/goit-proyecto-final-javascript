@@ -1,0 +1,42 @@
+@import '../common';
+
+#titleMylist{
+    margin-top: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+
+.mylistBTN{
+    width: 50%;
+    height: 40px;
+    margin-top: 10px;
+    border: solid 0.5px rgb(87, 3, 3);
+    border-radius: 20px;
+    background-color: rgb(117, 11, 11);
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.mylistBTN:hover{
+    border: solid 0.5px rgb(255, 55, 55);
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(172, 39, 39);
+    color: aliceblue;
+    font-weight: 700;
+    -moz-box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
+    box-shadow: 0px 6px 24px 9px rgba(0,0,0,0.5);
+}
+
+.addedBTN{
+    background-color: white;
+    color: black;
+    border: solid 2.5px rgba(124, 11, 11, 0.911);
+}
+
+.addedBTN:hover{
+    background-color: rgb(238, 201, 201);
+    color: rgb(124, 20, 20);
+    border: solid 2.5px rgb(167, 144, 144);
+}
